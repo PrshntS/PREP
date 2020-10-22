@@ -33,3 +33,6 @@
 
 # Debug Files
 *.vscode
+
+#text file
+*.txt
