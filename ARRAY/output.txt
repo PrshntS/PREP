@@ -1,4 +1,1 @@
-UNION
-1 2 3 4 5 
-INTERSECTION
-1 2 3 
+Yes
