@@ -12,26 +12,26 @@ int main(){
 	{
 		cin>>a[i];
 	}
-	set<ll> s;
+	ll ans=0;
+	ll left[n],right[n];
+	ll ans=0;
+	left[0]=a[0];
+	for(ll i=1;i<n;i++)
+	{
+		left[i]=max(left[i-1],a[i]);
+	}
+	right[n-1]=a[n-1];
+	for(ll i=n-2;i>=0;i--)
+	{
+		right[i]=max(right[i+1],a[i]);
+	}
 	for(ll i=0;i<n;i++)
 	{
-		s.insert(a[i]);
+		ans+=min(left[i],right[i])-a[i];
 	}
-	ll count=0;
-	for(ll i=0;i<n;i++)
-	{
-		if(s.find(a[i]-1)==s.end())
-		{
-			ll j=a[i];
-			while(s.find(j)!=s.end())
-			{
-				j++;
-			}
-			count=max(count,j-a[i]);
-		}
-	}
-	cout<<count;
-	cout<<1;
+	cout<<ans<<endl;
+
+	
 
 	return 0;
 }
