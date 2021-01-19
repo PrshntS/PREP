@@ -6,20 +6,32 @@ int main(){
 	freopen("input.txt","r",stdin);
 	freopen("output.txt","w",stdout);
 	#endif
-	ll n; cin>>n;
-	vector<ll> v;
-	for(int i=0;i<n;i++)
+	int t; cin>>t;
+	while(t--)
 	{
-		cin>>v[i];
+		ll n,k,d;
+		vector<ll> a(n);
+		ll sum=0;
+		for(ll i=0;i<n;i++)
+		{
+			cin>>a[i];
+			sum+=a[i];
+		}
+		ll day=sum/k;
+		if(day>=d)
+		{
+			cout<<d;
+		}
+		else
+		{
+			cout<<day;
+		}
+
+		cout<<endl;
+
+
 	}
-	ll profit=0;
-	ll minn=INT_MAX;
-	for(int i=0;i<n;i++)
-	{
-		minn=min(minn,v[i]);
-		profit=max(profit,v[i]-minn);
-	}
-	cout<<profit;
+
 	
 
 	return 0;
