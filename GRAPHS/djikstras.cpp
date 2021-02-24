@@ -10,7 +10,7 @@ int mindist(vector<bool> vis, vector<int> dist)
 {
 	int mindi = mx;
 	int idx = 0;
-	for (int i = 0; i < V; i++)
+	for (int i = 0; i < V ; i++)
 	{
 		if (!vis[i] && dist[i] < mindi)
 		{
