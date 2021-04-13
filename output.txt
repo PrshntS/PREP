@@ -1,0 +1,3 @@
+Message  = 20.000000
+Encrypted data = 5.000000
+Original Message Sent = 2.555432

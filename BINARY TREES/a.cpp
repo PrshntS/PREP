@@ -13,8 +13,10 @@ int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	ll t; cin >> t;
-	vector a{2, 4, 1, 5, 1, 5, 2};
-	sort(v.begin(), v.end(), [])
+	while (t--)
+	{
+
+	}
 
 
 	return 0;

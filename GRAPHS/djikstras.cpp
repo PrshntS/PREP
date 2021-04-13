@@ -40,9 +40,9 @@ void djikstra(int graph[][V], int src)
 		vis[u] = true;
 		for (int v = 0; v < V; v++)
 		{
-			if (graph[u][v] && !vis[v] && (dist[u] + graph[u][v] < dist[v]))
+			if (graph[u][v] && !vis[v])
 			{
-				dist[v] = dist[u] + graph[u][v];
+				dist[v] = min(dist[v], dist[u] + graph[u][v]);
 			}
 		}
 	}
