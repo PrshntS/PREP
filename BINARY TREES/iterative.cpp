@@ -36,8 +36,9 @@ void inorder(vector<int>& in, node* root)
 		}
 		else
 		{
-			node* u = s.top();
-			in.push_back(u->d);
+			curr = s.top();
+			s.pop();
+			in.push_back(curr->d);
 			curr = curr->right;
 		}
 	}
@@ -49,6 +50,7 @@ void preorder(vector<int>& pre, node* root)
 	while (!s.empty())
 	{
 		node* u = s.top();
+		s.pop();
 		pre.pb(u->d);
 		if (u->right)
 		{
@@ -105,6 +107,7 @@ int main() {
 	preorder(pre, root);
 	inorder(in, root);
 	postorder(post, root);
+	cout << 1;
 	for (int i : pre)
 	{
 		cout << i << " ";
@@ -120,7 +123,6 @@ int main() {
 		cout << i << " ";
 	}
 	cout << endl;
-
 
 
 	return 0;

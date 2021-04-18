@@ -21,6 +21,7 @@ public:
 
 
 };
+
 tree* newn(int x)
 {
 	tree* a = new tree(x);
