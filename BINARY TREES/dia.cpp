@@ -23,32 +23,18 @@ node* newn(int v)
 	node *n = new node(v);
 	return n;
 }
-int height(node* root)
+int diameter(node* root, int& height)
 {
+	int lh = 0, rh = 0;
+	int ld = 0, rd = 0;
 	if (!root)
 	{
 		return 0;
 	}
-	else
-	{
-		int lh = height(root->left);
-		int rh = height(root->right);
-		return 1 + max(lh, rh);
-	}
-}
-int diameter(node* root)
-{
-	if (!root)
-	{
-		return 0;
-	}
-	int lh = height(root->left);
-	int rh = height(root->right);
-
-	int ldia = diameter(root->left);
-	int rdia = diameter(root->right);
-
-	return max(lh + rh , max(ldia, rdia));
+	ld = diameter(root->left, height);
+	rd = diameter(root->right, height);
+	height = max(rh, lh) + 1;
+	return max(lh + rh + 1, max(ld, rd));
 }
 int main() {
 #ifndef ONLINE_JUDGE
@@ -62,7 +48,8 @@ int main() {
 	root->right = newn(30);
 	root->left->left = newn(40);
 	root->left-> right = newn(60);
-	cout << diameter(root);
+	int h = 0;
+	cout << diameter(root, h);
 
 
 	return 0;
